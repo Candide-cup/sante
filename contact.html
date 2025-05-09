@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Naturamedica</title>
+  </head>
+  <body class="pt-20">
+    <div class="bg-green-50 shadow-md fixed top-0 left-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 text-green-600 font-bold text-xl">
+            NATURAMEDICA
+          </div>
+
+          <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+            <a href="index.html" class="hover:text-green-600"> Accueil </a>
+            <a href="boutique.html" class="hover:text-green-600"> Boutique </a>
+            <a href="recommandation.html" class="hover:text-green-600">
+              Recommandation
+            </a>
+
+            <a href="apropos.html" class="hover:text-green-600"> À propos </a>
+            <a href="contact.html" class="hover:text-green-600"> Contact </a>
+          </nav>
+
+          <div class="flex items-center space-x-4">
+            <a href="boutique.html#panier" class="relative">
+              <svg
+                class="w-6 h-6 text-gray-700 hover:text-green-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="boutique.html#panier"
+              class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm font-medium"
+              >Panier</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="py-15">
+      <!-- Titre de la page -->
+      <section class="text-center">
+        <h1 class="text-3xl font-bold text-green-800 mb-2">Contactez-nous</h1>
+        <p class="text-gray-600">
+          Écrivez-nous, nous vous répondrons rapidement.
+        </p>
+      </section>
+
+      <!-- Section principale -->
+      <section class="max-w-4xl mx-auto px-6 py-12 grid md:grid-cols-2 gap-10">
+        <!-- Formulaire -->
+        <div class="min-h-screen flex flex-col">
+          <form
+            action="http://localhost:3000/api/contact"
+            method="POST"
+            class="space-y-6"
+          >
+            <div>
+              <label for="nom" class="block text-sm font-medium">Nom</label>
+              <input
+                type="text"
+                id="nom"
+                name="nom"
+                required
+                class="w-full mt-1 p-3 border border-gray-300 rounded-lg"
+              />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                class="w-full mt-1 p-3 border border-gray-300 rounded-lg"
+              />
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-medium"
+                >Message</label
+              >
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                class="w-full mt-1 p-3 border border-gray-300 rounded-lg"
+              ></textarea>
+            </div>
+            <button
+              type="submit"
+              class="bg-green-700 text-white px-6 py-2 rounded hover:bg-green-800"
+            >
+              Envoyer
+            </button>
+          </form>
+        </div>
+
+        <!-- Infos de contact -->
+        <div class="space-y-6">
+          <div>
+            <h2 class="text-lg font-semibold mb-2">Coordonnées</h2>
+            <p>📧 contact@naturamedica.fr</p>
+            <p>📞 +229 0152745612</p>
+          </div>
+
+          <div>
+            <h2 class="text-lg font-semibold mb-2">Suivez-nous</h2>
+            <div class="flex space-x-4">
+              <a href="#" class="text-green-700 hover:underline">Facebook</a>
+              <a href="#" class="text-green-700 hover:underline">Tiktok</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pied de page -->
+    </div>
+    <footer class="bg-green-100 text-sm text-gray-600 text-center py-15">
+      <div class="space-x-4">
+        <a href="#" class="hover:underline">Mentions légales</a> |
+        <a href="#" class="hover:underline"> Politique de confidentialité</a>
+      </div>
+      <p class="mt-2">&copy; 2025 Naturamedica. Tous droits réservés.</p>
+    </footer>
+  </body>
+</html>

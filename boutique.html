@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Naturamedica</title>
+  </head>
+  <body class="pt-16">
+    <div class="bg-green-50 shadow-md fixed top-0 left-0 w-full z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-16">
+          <div class="flex-shrink-0 text-green-600 font-bold text-xl">
+            NATURAMEDICA
+          </div>
+
+          <nav class="hidden md:flex space-x-6 text-gray-700 font-medium">
+            <a href="index.html" class="hover:text-green-600"> Accueil </a>
+            <a href="boutique.html" class="hover:text-green-600"> Boutique </a>
+            <a href="recommandation.html" class="hover:text-green-600">
+              Recommandation
+            </a>
+
+            <a href="apropos.html" class="hover:text-green-600"> À propos </a>
+            <a href="contact.html" class="hover:text-green-600"> Contact </a>
+          </nav>
+
+          <div class="flex items-center space-x-4">
+            <a href="boutique.html#panier" class="relative">
+              <svg
+                class="w-6 h-6 text-gray-700 hover:text-green-600"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                />
+              </svg>
+            </a>
+
+            <a
+              href="boutique.html#panier"
+              class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 text-sm font-medium"
+              >Panier</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <header class="bg-green-100 py-8">
+      <div class="max-w-6xl mx-auto px-4">
+        <h1 class="text-4xl font-bold text-green-700">Boutique</h1>
+      </div>
+    </header>
+
+    <main class="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Exemple de fiche produit -->
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="aloevera.jpg"
+          alt="Aloe Vera"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Aloe Vera</h2>
+        <p class="text-gray-600 mb-2">
+          Hydratant et apaisant, idéal au quotidien.
+        </p>
+        <!-- Affichage du prix -->
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Aloe Vera', 500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+
+      <!-- Autres produits -->
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="menthe poivrée.jpg"
+          alt="Menthe poivrée"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Menthe poivrée</h2>
+        <p class="text-gray-600 mb-2">Parfait pour la digestion.</p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 1000 f</p>
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Menthe poivrée', 1000)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+
+      <!-- Produit 3 -->
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="tilleul.jpg_720_1000_2"
+          alt="Tilleul"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Tilleul</h2>
+        <p class="text-gray-600 mb-2">
+          Calme naturel pour les nuits paisibles.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 2000 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Tilleul', 2000)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="moringa.jpg"
+          alt="Moringa"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Moringa</h2>
+        <p class="text-gray-600 mb-2">
+          Riche en nutriments, idéal pour renforcer l'immunité.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Moringa', 500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="neem.avif" alt="Neem" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Neem</h2>
+        <p class="text-gray-600 mb-2">
+          Plante purifiante aux propriétés antibactériennes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 400 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Neem', 400)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="kinkeliba-2.jpg"
+          alt="kinkeliba"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">kinkeliba</h2>
+        <p class="text-gray-600 mb-2">
+          Infusion traditionnelle pour drainer et purifier l’organisme.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('kinkeliba', 500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="hibiscus.jpg"
+          alt="Hibiscus"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Hibiscus</h2>
+        <p class="text-gray-600 mb-2">
+          Rafraîchissante et riche en antioxydants naturels.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 1000 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Hibiscus', 1000)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="baobab.jpg" alt="Baobab" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Baobab</h2>
+        <p class="text-gray-600 mb-2">
+          Riches en calcium et fer, idéales pour renforcer l’organisme.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 1500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Baobab', 1500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="aranto.jpg" alt="Aranto" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Aranto</h2>
+        <p class="text-gray-600 mb-2">
+          Plante aux vertus apaisantes, traditionnellement utilisée pour
+          renforcer les défenses naturelles.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 3000 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Aranto', 3000)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="Artemisia-annua.jpg"
+          alt="Artemisia annua"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Artemisia annua</h2>
+        <p class="text-gray-600 mb-2">
+          Plante ancestrale aux vertus reconnues contre le paludisme.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 600 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Artemisia annua', 600)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="maniguette.png"
+          alt="maniguette"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Maniguette</h2>
+        <p class="text-gray-600 mb-2">
+          Épice aux arômes chauds, reconnue pour ses propriétés digestives et
+          stimulantes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 700 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Maniguette', 700)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="séné.jpg" alt="Séné" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Séné</h2>
+        <p class="text-gray-600 mb-2">
+          Plante purgative naturelle utilisée pour soulager la constipation
+          passagère.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 400 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Séné', 400)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="racine de vétiver.jpg"
+          alt="Racine de vétiver"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Racine de vétiver</h2>
+        <p class="text-gray-600 mb-2">
+          Racine aux propriétés apaisantes, utilisée pour calmer le stress et
+          purifier le corps.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 1500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Racine de vétiver', 1500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="racine de moringa.jpg"
+          alt="Tilleul"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Racine de moringa</h2>
+        <p class="text-gray-600 mb-2">
+          Racine tonique et stimulante, traditionnellement utilisée pour
+          renforcer l’organisme.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 800 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Racine de moringa', 800)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="canelle.jpg"
+          alt="Cannelle"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Cannelle</h2>
+        <p class="text-gray-600 mb-2">
+          Épice réchauffante aux vertus digestives, antioxydantes et
+          réconfortantes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 300 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Cannelle', 300)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="anis étoilé.jpg"
+          alt="Anis étoilé"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Anis étoilé</h2>
+        <p class="text-gray-600 mb-2">
+          Anis étoilé : une étoile digestive aux arômes doux et apaisants.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 200 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Anis étoilé', 200)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="clou de girofle.jpg"
+          alt="Clou de girofle"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Clou de girofle</h2>
+        <p class="text-gray-600 mb-2">
+          Clou de girofle : puissant antiseptique naturel aux vertus
+          analgésiques.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : "00 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Clou de girofle', 300)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="romarin.jpg"
+          alt="Tilleul"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Romarin</h2>
+        <p class="text-gray-600 mb-2">
+          Romarin : tonique naturel pour la mémoire, la digestion et la
+          vitalité.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 400 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Romarin', 400)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="combretum.jpg"
+          alt="Combretum"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Combretum</h2>
+        <p class="text-gray-600 mb-2">
+          Combretum : plante tonique et dépurative, idéale pour soutenir le foie
+          et la digestion.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 700 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Combretum', 700)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="feuille de goyave.jpg"
+          alt="Tilleul"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Feuille de goyave</h2>
+        <p class="text-gray-600 mb-2">
+          Feuille de goyave : remède naturel contre les troubles digestifs et
+          les infections.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 200 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Feuille de goyave', 200)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="thym.jpg" alt="Thym" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Thym</h2>
+        <p class="text-gray-600 mb-2">
+          Thym : allié naturel des voies respiratoires et de la digestion.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 400 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Thym', 400)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="Sauge.jpg" alt="Sauge" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Sauge</h2>
+        <p class="text-gray-600 mb-2">
+          Sauge : plante aux vertus purifiantes, digestives et équilibrantes
+          pour les femmes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Sauge', 500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="curcuma.jpg"
+          alt="Curcuma"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Curcuma</h2>
+        <p class="text-gray-600 mb-2">
+          Curcuma : racine dorée aux puissantes propriétés anti-inflammatoires
+          et antioxydantes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 800 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Curcuma', 800)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="citronelle.jpg"
+          alt="Citronnelle"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Citronnelle</h2>
+        <p class="text-gray-600 mb-2">
+          Citronnelle : infusion rafraîchissante aux vertus digestives et
+          apaisantes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 100 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Citronnelle', 100)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="ortie.jpg" alt="Ortie" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Ortie</h2>
+        <p class="text-gray-600 mb-2">
+          Ortie : plante revitalisante, riche en fer, idéale pour renforcer
+          l’organisme.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 300 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Ortie', 300)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="basilic sacré.jpg"
+          alt="Basilic sacré"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Basilic sacré</h2>
+        <p class="text-gray-600 mb-2">
+          Basilic sacré : plante adaptogène qui apaise le stress et renforce
+          l’immunité.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 200 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Balisic sacré', 200)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="bardane.jpg"
+          alt="Bardane"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Bardane</h2>
+        <p class="text-gray-600 mb-2">
+          Bardane : plante dépurative réputée pour purifier la peau et favoriser
+          l’élimination des toxines.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 400 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Bardane', 400)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="mélisse.jpg"
+          alt="Mélisse"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Mélisse</h2>
+        <p class="text-gray-600 mb-2">
+          Mélisse : plante calmante qui apaise le stress, l’anxiété et favorise
+          le sommeil.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Mélisse', 500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="isope.jpg" alt="Tilleul" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Hysope</h2>
+        <p class="text-gray-600 mb-2">
+          Hysope : plante aromatique aux vertus expectorantes et purifiantes
+          pour les voies respiratoires.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 100 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Hysope', 100)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="verveine.jpeg"
+          alt="Verveine"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Verveine</h2>
+        <p class="text-gray-600 mb-2">
+          Verveine : infusion douce et citronnée, parfaite pour apaiser l’esprit
+          et faciliter le sommeil.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 800 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Verveine', 800)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="caroubier.webp"
+          alt="Caroubier"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Caroubier</h2>
+        <p class="text-gray-600 mb-2">
+          Caroubier : fruit naturellement sucré, riche en fibres, idéal pour la
+          digestion et l’énergie.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Caroubier', 500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img src="mgose.jpg" alt="Margose" class="rounded-xl mb-4 h-30 w-30" />
+        <h2 class="text-xl font-semibold mb-2">Margose</h2>
+        <p class="text-gray-600 mb-2">
+          Margose : plante amère réputée pour réguler la glycémie et purifier
+          l’organisme.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 200 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Margose', 200)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="jujube _ graines de la paix belle taille.jpg"
+          alt="Jujube"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Jujube</h2>
+        <p class="text-gray-600 mb-2">
+          Jujube : petit fruit doux et apaisant, reconnu pour renforcer
+          l’immunité et calmer le système nerveux.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 600 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Jujube', 600)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="codycep.jpg"
+          alt="Cordyceps"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Cordyceps</h2>
+        <p class="text-gray-600 mb-2">
+          Cordyceps : champignon adaptogène réputé pour stimuler l’énergie,
+          l’endurance et la vitalité naturelle.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 700 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Cordyceps', 700)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="#Vétiver #Khamaré #PlantesMedicinales #SecretsDeFemmes #RemèdeNaturel#DétoxNaturelle #BienÊtreFéminin #DouleursMenstruelles #InfectionsUrinaire #HygièneIntimeNaturelle#PeauEclatante #RoutineNaturelle #SoinsNature.jpg"
+          alt="Vétiver"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Vétiver</h2>
+        <p class="text-gray-600 mb-2">
+          Vétiver : racine aux notes boisées, reconnue pour ses propriétés
+          apaisantes et purifiantes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 400 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Vétiver', 400)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="aligator peper.jpg"
+          alt="Alligator pepper"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Aligator pepper</h2>
+        <p class="text-gray-600 mb-2">
+          Alligator pepper : épice puissante aux vertus digestives et
+          stimulantes, utilisée en médecine traditionnelle africaine.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 800 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Aligator pepper', 800)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="Molokhia (Egyptian spinach).jpg"
+          alt="Molokhia"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Molokhia</h2>
+        <p class="text-gray-600 mb-2">
+          Molokhia : feuille nutritive aux vertus fortifiantes, riche en
+          vitamines, antioxydants et bienfaits digestifs.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 300 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Molokhia', 300)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="fleur de moringa.jpg"
+          alt="Fleur de moringa"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Fleur de moringa</h2>
+        <p class="text-gray-600 mb-2">
+          Fleur de moringa : délicate et médicinale, elle soutient l’immunité et
+          équilibre naturellement le métabolisme.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 500 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Fleur de moringa', 500)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+      <div class="bg-white rounded-2xl shadow p-4">
+        <img
+          src="basilic africain.jpg"
+          alt="Basilic africain"
+          class="rounded-xl mb-4 h-30 w-30"
+        />
+        <h2 class="text-xl font-semibold mb-2">Basilic africain</h2>
+        <p class="text-gray-600 mb-2">
+          Basilic africain : plante aromatique sacrée aux vertus antivirales,
+          digestives et apaisantes.
+        </p>
+        <p class="text-lg font-bold text-green-600 mb-4">Prix : 300 f</p>
+
+        <button
+          class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-xl"
+          onclick="ajouterAuPanier('Balisic africain', 300)"
+        >
+          Ajouter au panier
+        </button>
+      </div>
+    </main>
+    <section class="max-w-3xl mx-auto mt-10 bg-white p-4 rounded shadow">
+      <h3 class="text-xl font-bold mb-5">Votre panier</h3>
+
+      <!-- 🧺 Liste des plantes -->
+      <ul id="panier-items" class="list-disc pl-5 text-gray-800 space-y-1"></ul>
+
+      <!-- 💰 Affichage du total -->
+      <p class="mt-4 text-lg font-semibold">
+        Total : <span id="total">0</span> FCFA
+      </p>
+
+      <!-- 🔁 Bouton de paiement -->
+      <a
+        href="paiement.html"
+        onclick="sauvegarderPanier()"
+        class="mt-9 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+      >
+        Passer au paiement
+      </a>
+    </section>
+
+    <footer class="bg-green-100 text-sm text-gray-600 text-center py-15">
+      <div class="space-x-4">
+        <a href="#" class="hover:underline">Mentions légales</a> |
+        <a href="#" class="hover:underline"> Politique de confidentialité</a>
+      </div>
+      <p class="mt-2">&copy; 2025 Naturamedica. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+      let panier = [];
+      let total = 0;
+
+      function ajouterAuPanier(nom, prix) {
+        panier.push({ nom, prix });
+        total += prix;
+        afficherPanier();
+      }
+
+      function retirerDuPanier(index) {
+        total -= panier[index].prix;
+        panier.splice(index, 1);
+        afficherPanier();
+      }
+
+      function afficherPanier() {
+        const liste = document.getElementById("panier-items");
+        const totalElement = document.getElementById("total");
+        liste.innerHTML = "";
+
+        panier.forEach((item, index) => {
+          const li = document.createElement("li");
+          li.className = "flex justify-between items-center mb-1";
+          li.innerHTML = `
+            <span>${item.nom} - ${item.prix.toLocaleString()} FCFA</span>
+            <button onclick="retirerDuPanier(${index})" class="text-red-500 hover:underline">❌</button>
+          `;
+          liste.appendChild(li);
+        });
+
+        if (totalElement) {
+          totalElement.textContent = total.toLocaleString();
+        }
+      }
+      function sauvegarderPanier() {
+        localStorage.setItem("panier", JSON.stringify(panier));
+        const total = panier.reduce((sum, item) => sum + item.prix, 0);
+        localStorage.setItem("total", total);
+      }
+    </script>
+  </body>
+</html>

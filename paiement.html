@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paiement Naturamedica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-green-50 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-6 rounded-xl shadow-md w-full max-w-md space-y-4">
+      <h1 class="text-2xl font-bold text-green-700 text-center">
+        Paiement Naturamedica
+      </h1>
+
+      <div>
+        <h2 class="font-semibold mb-2">Votre commande :</h2>
+        <ul id="recap-panier" class="list-disc pl-5 text-sm text-gray-700"></ul>
+        <p class="mt-2 text-lg font-semibold">
+          Total : <span id="total-commande">0</span> FCFA
+        </p>
+      </div>
+
+      <input
+        id="prenom"
+        type="text"
+        placeholder="Prénom"
+        class="w-full p-2 border rounded"
+      />
+      <input
+        id="nom"
+        type="text"
+        placeholder="Nom"
+        class="w-full p-2 border rounded"
+      />
+      <input
+        id="email"
+        type="email"
+        placeholder="Email"
+        class="w-full p-2 border rounded"
+      />
+      <input
+        id="phone"
+        type="text"
+        placeholder="Téléphone (+229...)"
+        class="w-full p-2 border rounded"
+      />
+
+      <button
+        id="payer-btn"
+        class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700"
+      >
+        Confirmer et payer
+      </button>
+    </div>
+
+    <script>
+      window.onload = () => {
+        const panier = JSON.parse(localStorage.getItem("panier") || "[]");
+        const total = parseInt(localStorage.getItem("total")) || 0;
+
+        const liste = document.getElementById("recap-panier");
+        panier.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = `${item.nom} - ${item.prix.toLocaleString()} FCFA`;
+          liste.appendChild(li);
+        });
+
+        document.getElementById("total-commande").textContent =
+          total.toLocaleString();
+
+        document
+          .getElementById("payer-btn")
+          .addEventListener("click", async () => {
+            const prenom = document.getElementById("prenom").value;
+            const nom = document.getElementById("nom").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+
+            const response = await fetch("http://localhost:3000/api/payments", {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                amount: total,
+                description:
+                  "Commande Naturamedica : " +
+                  panier.map((p) => p.nom).join(", "),
+                firstname: prenom,
+                lastname: nom,
+                email: email,
+                phone: phone,
+              }),
+            });
+
+            const data = await response.json();
+            if (data.url) {
+              window.location.href = data.url;
+            } else {
+              alert("Erreur de paiement");
+            }
+          });
+      };
+    </script>
+  </body>
+</html>
