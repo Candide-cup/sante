@@ -1,0 +1,16 @@
+# Ne pas versionner les modules installés
+node_modules/
+
+# Ne pas versionner les fichiers d'environnement
+.env
+
+# Logs
+*.log
+
+# Cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VS Code settings (si tu utilises VS Code)
+.vscode/
